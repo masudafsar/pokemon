@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './PokemonCard.module.scss';
 import { Pokemon } from '../../types/entity/pokemon';
 
@@ -18,7 +19,7 @@ export const PokemonCard: React.FC<Props> = ({ pokemon }) => (
       {pokemon.types.map((type) => (
         <li
           key={type.type.name}
-          className={styles.Type}
+          className={cn(styles.Type, styles[type.type.name])}
         >
           {type.type.name}
         </li>

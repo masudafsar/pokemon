@@ -36,6 +36,78 @@
     @apply p-4;
     @apply rounded;
     @apply shadow;
-    @apply text-2xl font-extrabold;
+    @apply text-2xl font-extrabold text-white;
+
+    &.normal {
+      @apply bg-tags-normal;
+    }
+
+    &.fighting {
+      @apply bg-tags-fighting;
+    }
+
+    &.flying {
+      @apply bg-tags-flying;
+    }
+
+    &.poison {
+      @apply bg-tags-poison;
+    }
+
+    &.fire {
+      @apply bg-tags-fire;
+    }
+
+    &.water {
+      @apply bg-tags-water;
+    }
+
+    &.grass {
+      @apply bg-tags-grass;
+    }
+
+    &.electric {
+      @apply bg-tags-electric;
+    }
+
+    &.ice {
+      @apply bg-tags-ice;
+    }
+
+    &.ground {
+      @apply bg-tags-ground;
+    }
+
+    &.psychic {
+      @apply bg-tags-psychic;
+    }
+
+    &.dark {
+      @apply bg-tags-dark;
+    }
+
+    &.rock {
+      @apply bg-tags-rock;
+    }
+
+    &.bug {
+      @apply bg-tags-bug;
+    }
+
+    &.ghost {
+      @apply bg-tags-ghost;
+    }
+
+    &.steel {
+      @apply bg-tags-steel;
+    }
+
+    &.dragon {
+      @apply bg-tags-dragon;
+    }
+
+    &.fairy {
+      @apply bg-tags-fairy;
+    }
   }
 }
