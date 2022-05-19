@@ -24,18 +24,22 @@
 .Stats {
   .Stat {
     @apply w-full;
+    @apply mb-4;
 
     .StatTitle {
       @apply text-2xl font-extrabold text-left;
       text-transform: capitalize;
     }
+
     .StatBase {
       @apply flex flex-row items-center;
     }
+
     .StatValue {
       @apply p-2;
       @apply text-2xl font-extrabold;
     }
+
     .StatProgress {
       @apply flex-1;
       @apply h-3;
@@ -46,6 +50,48 @@
         @apply h-3;
         @apply rounded-full;
         background-color: #da4453;
+      }
+    }
+
+    &.hp {
+      @apply text-stats-hp;
+      .StatProgressInner {
+        @apply bg-stats-hp;
+      }
+    }
+
+    &.attack {
+      @apply text-stats-attack;
+      .StatProgressInner {
+        @apply bg-stats-attack;
+      }
+    }
+
+    &.defense {
+      @apply text-stats-defense;
+      .StatProgressInner {
+        @apply bg-stats-defense;
+      }
+    }
+
+    &.special-attack {
+      @apply text-stats-special-attack;
+      .StatProgressInner {
+        @apply bg-stats-special-attack;
+      }
+    }
+
+    &.special-defense {
+      @apply text-stats-special-defense;
+      .StatProgressInner {
+        @apply bg-stats-special-defense;
+      }
+    }
+
+    &.speed {
+      @apply text-stats-speed;
+      .StatProgressInner {
+        @apply bg-stats-speed;
       }
     }
   }

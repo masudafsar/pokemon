@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './PokemonBackCard.module.scss';
 import { Pokemon } from '../../../types/entity/pokemon';
 
@@ -14,7 +15,7 @@ export const PokemonBackCard: React.FC<Props> = ({ pokemon, onClick }) => (
     {pokemon.stats && (
     <div className={styles.Stats}>
       {pokemon.stats.map((stat) => (
-        <div key={stat.stat.name} className={styles.Stat}>
+        <div key={stat.stat.name} className={cn(styles.Stat, styles[stat.stat.name])}>
           <div className={styles.StatTitle}>{stat.stat.name}</div>
           <div className={styles.StatBase}>
             <div className={styles.StatProgress}>
