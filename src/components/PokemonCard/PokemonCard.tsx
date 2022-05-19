@@ -13,10 +13,17 @@ export const PokemonCard: React.FC<Props> = ({ pokemon }) => (
     <div className={styles.Image}>
       <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
     </div>
+    {pokemon.types && (
     <ul className={styles.Types}>
-      <li className={styles.Type}>
-        s
-      </li>
+      {pokemon.types.map((type) => (
+        <li
+          key={type.type.name}
+          className={styles.Type}
+        >
+          {type.type.name}
+        </li>
+      ))}
     </ul>
+    )}
   </div>
 );

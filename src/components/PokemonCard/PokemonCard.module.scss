@@ -1,15 +1,41 @@
 .Card {
+  //width: 590px;
+  //height: 885px;
+  @apply p-20;
+  @apply bg-white;
+  @apply shadow;
+  @apply rounded-lg;
+  @apply text-center;
 }
 
 .Id {
+  color: #D3D3D3;
+  @apply text-3xl font-extrabold;
+  @apply pt-4;
 }
 
 .Name {
+  color: #393939;
+  @apply text-9xl font-black;
+  @apply py-8;
 }
 
 .Image {
+  img {
+    width: 420px;
+    height: 420px;
+    @apply mx-auto;
+  }
 }
 
 .Types {
-  .Type{}
+  @apply pt-20;
+  @apply flex flex-row justify-center gap-8;
+
+  .Type {
+    @apply p-4;
+    @apply rounded;
+    @apply shadow;
+    @apply text-2xl font-extrabold;
+  }
 }
