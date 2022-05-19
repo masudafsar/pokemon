@@ -1,2 +1,2 @@
 export const BASE_URL = 'https://pokeapi.co/api/v2';
-export const POKEMON_COUNT = 1126;
+export const POKEMON_COUNT = 898;

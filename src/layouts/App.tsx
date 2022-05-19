@@ -1,16 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { PokemonDetailsPage } from '../pages/PokemonDetailsPage';
 
-import styles from './App.module.scss';
-import { usePokemonDetails } from '../hooks/usePokemonDetails';
-
-const App: React.FC = () => {
-  const [data] = usePokemonDetails(1);
-  return (
-    <div className={styles.App}>
-      <h1 className="text-blue-500">Hi Pokémon</h1>
-      <p>{data?.name}</p>
-    </div>
-  );
-};
+const App: React.FC = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<PokemonDetailsPage showRandomPokemon />} />
+      <Route path="/:id" element={<PokemonDetailsPage />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
