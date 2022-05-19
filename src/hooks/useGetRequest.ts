@@ -1,6 +1,6 @@
 import { DependencyList, useEffect, useState } from 'react';
 import request from '../helpers/request';
-import { useRequestType } from '../types/api/useRequestType';
+import { useRequestType } from '../types/hook/useRequestType';
 
 export const useGetRequest = <ResponseT, ParamsT = any>(
   url: string,

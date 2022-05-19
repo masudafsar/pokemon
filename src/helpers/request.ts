@@ -10,11 +10,7 @@ const request = axios.create({
 });
 
 request.interceptors.request.use(
-  (config) => {
-    console.log(config.headers);
-    // config.headers['Content-Type'] = 'application/json';
-    return config;
-  },
+  (config) => config,
   (error) => Promise.reject(error),
 );
 
