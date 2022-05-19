@@ -5,9 +5,10 @@ import styles from './PokemonDetailsPage.module.scss';
 import { usePokemonDetails } from '../hooks/usePokemonDetails';
 import { POKEMON_COUNT } from '../helpers/constants';
 import { getRandomInt } from '../helpers/getRandomInt';
-import { PokemonFrontCard } from '../components/PokemonCard/FrontCard/PokemonFrontCard';
+import { FrontContent } from '../components/PokemonCard/FrontCard/FrontContent';
 import { Pokemon } from '../types/entity/pokemon';
-import { PokemonBackCard } from '../components/PokemonCard/BackCard/PokemonBackCard';
+import { PokemonCard } from '../components/PokemonCard/PokemonCard';
+import { BackContent } from '../components/PokemonCard/BackCard/BackContent';
 
 interface Props {
     showRandomPokemon?: boolean;
@@ -29,9 +30,13 @@ export const PokemonDetailsPage: React.FC<Props> = ({ showRandomPokemon }) => {
     <div className={styles.PokemonDetailsPage}>
       {isLoaded && (
         !isFlipped ? (
-          <PokemonFrontCard pokemon={data as Pokemon} onClick={onCardClickHandler} />
+          <PokemonCard pokemon={data as Pokemon} onClick={onCardClickHandler}>
+            <FrontContent pokemon={data as Pokemon} />
+          </PokemonCard>
         ) : (
-          <PokemonBackCard pokemon={data as Pokemon} onClick={onCardClickHandler} />
+          <PokemonCard pokemon={data as Pokemon} onClick={onCardClickHandler}>
+            <BackContent pokemon={data as Pokemon} />
+          </PokemonCard>
         )
       )}
     </div>

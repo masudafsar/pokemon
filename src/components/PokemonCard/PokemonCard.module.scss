@@ -1,0 +1,20 @@
+.Card {
+  @apply p-20;
+  @apply bg-white;
+  @apply shadow;
+  @apply rounded-lg;
+  @apply text-center;
+}
+
+.Id {
+  color: #D3D3D3;
+  @apply text-3xl font-extrabold;
+  @apply pt-4;
+}
+
+.Name {
+  color: #393939;
+  @apply text-9xl font-black;
+  @apply py-8;
+  text-transform: capitalize;
+}

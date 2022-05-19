@@ -1,18 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './PokemonBackCard.module.scss';
+import styles from './BackContent.module.scss';
 import { Pokemon } from '../../../types/entity/pokemon';
 
 interface Props {
     pokemon: Pokemon;
-    onClick?: () => void;
 }
 
-export const PokemonBackCard: React.FC<Props> = ({ pokemon, onClick }) => (
-  <div className={styles.Card} onClick={onClick} aria-hidden="true">
-    <div className={styles.Id}>{`#${pokemon.id}`}</div>
-    <div className={styles.Name}>{pokemon.name}</div>
-    {pokemon.stats && (
+export const BackContent: React.FC<Props> = ({ pokemon }) => (
+  pokemon.stats && (
     <div className={styles.Stats}>
       {pokemon.stats.map((stat) => (
         <div key={stat.stat.name} className={cn(styles.Stat, styles[stat.stat.name])}>
@@ -26,6 +22,5 @@ export const PokemonBackCard: React.FC<Props> = ({ pokemon, onClick }) => (
         </div>
       ))}
     </div>
-    )}
-  </div>
+  )
 );

@@ -1,17 +1,14 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import cn from 'classnames';
-import styles from './PokemonFrontCard.module.scss';
+import styles from './FrontContent.module.scss';
 import { Pokemon } from '../../../types/entity/pokemon';
 
 interface Props {
     pokemon: Pokemon;
-    onClick?: () => void;
 }
 
-export const PokemonFrontCard: React.FC<Props> = ({ pokemon, onClick }) => (
-  <div className={styles.Card} onClick={onClick} aria-hidden="true">
-    <div className={styles.Id}>{`#${pokemon.id}`}</div>
-    <div className={styles.Name}>{pokemon.name}</div>
+export const FrontContent: React.FC<Props> = ({ pokemon }) => (
+  <>
     <div className={styles.Image}>
       <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
     </div>
@@ -27,5 +24,5 @@ export const PokemonFrontCard: React.FC<Props> = ({ pokemon, onClick }) => (
       ))}
     </ul>
     )}
-  </div>
+  </>
 );
