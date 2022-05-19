@@ -3,11 +3,12 @@ import styles from './PokemonBackCard.module.scss';
 import { Pokemon } from '../../../types/entity/pokemon';
 
 interface Props {
-    pokemon: Pokemon
+    pokemon: Pokemon;
+    onClick?: () => void;
 }
 
-export const PokemonBackCard: React.FC<Props> = ({ pokemon }) => (
-  <div className={styles.Card}>
+export const PokemonBackCard: React.FC<Props> = ({ pokemon, onClick }) => (
+  <div className={styles.Card} onClick={onClick} aria-hidden="true">
     <div className={styles.Id}>{`#${pokemon.id}`}</div>
     <div className={styles.Name}>{pokemon.name}</div>
     {pokemon.stats && (

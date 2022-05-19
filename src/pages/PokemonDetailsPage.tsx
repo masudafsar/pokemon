@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 import styles from './PokemonDetailsPage.module.scss';
@@ -15,12 +15,25 @@ interface Props {
 
 export const PokemonDetailsPage: React.FC<Props> = ({ showRandomPokemon }) => {
   const { id } = useParams();
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+
+  const onCardClickHandler = useCallback(() => {
+    setIsFlipped((prevState) => !prevState);
+  }, []);
+
   let pokemonId = parseInt(`${id}`);
   pokemonId = !showRandomPokemon && !Number.isNaN(pokemonId) ? pokemonId : getRandomInt(0, POKEMON_COUNT) + 1;
   const [data, isLoaded] = usePokemonDetails(pokemonId, [pokemonId]);
+
   return (
     <div className={styles.PokemonDetailsPage}>
-      {isLoaded && <PokemonBackCard pokemon={data as Pokemon} />}
+      {isLoaded && (
+        !isFlipped ? (
+          <PokemonFrontCard pokemon={data as Pokemon} onClick={onCardClickHandler} />
+        ) : (
+          <PokemonBackCard pokemon={data as Pokemon} onClick={onCardClickHandler} />
+        )
+      )}
     </div>
   );
 };

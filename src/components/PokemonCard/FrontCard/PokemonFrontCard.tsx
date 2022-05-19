@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import cn from 'classnames';
 import styles from './PokemonFrontCard.module.scss';
 import { Pokemon } from '../../../types/entity/pokemon';
 
 interface Props {
-    pokemon: Pokemon
+    pokemon: Pokemon;
+    onClick?: () => void;
 }
 
-export const PokemonFrontCard: React.FC<Props> = ({ pokemon }) => (
-  <div className={styles.Card}>
+export const PokemonFrontCard: React.FC<Props> = ({ pokemon, onClick }) => (
+  <div className={styles.Card} onClick={onClick} aria-hidden="true">
     <div className={styles.Id}>{`#${pokemon.id}`}</div>
     <div className={styles.Name}>{pokemon.name}</div>
     <div className={styles.Image}>
