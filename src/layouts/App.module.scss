@@ -1,2 +1,5 @@
 .App {
+  @apply w-screen h-screen;
+  @apply flex justify-center items-center;
+  background-color: #F5F5F5;
 }

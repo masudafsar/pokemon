@@ -1,4 +1,3 @@
-export interface PokemonDetailsResponse {
-    id: number;
-    name: string;
-}
+import { Pokemon } from '../entity/pokemon';
+
+export type PokemonDetailsResponse = Pokemon
