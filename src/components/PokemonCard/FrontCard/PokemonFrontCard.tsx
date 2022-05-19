@@ -1,13 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
-import styles from './PokemonCard.module.scss';
-import { Pokemon } from '../../types/entity/pokemon';
+import styles from './PokemonFrontCard.module.scss';
+import { Pokemon } from '../../../types/entity/pokemon';
 
 interface Props {
     pokemon: Pokemon
 }
 
-export const PokemonCard: React.FC<Props> = ({ pokemon }) => (
+export const PokemonFrontCard: React.FC<Props> = ({ pokemon }) => (
   <div className={styles.Card}>
     <div className={styles.Id}>{`#${pokemon.id}`}</div>
     <div className={styles.Name}>{pokemon.name}</div>

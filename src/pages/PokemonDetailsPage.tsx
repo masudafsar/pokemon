@@ -5,8 +5,9 @@ import styles from './PokemonDetailsPage.module.scss';
 import { usePokemonDetails } from '../hooks/usePokemonDetails';
 import { POKEMON_COUNT } from '../helpers/constants';
 import { getRandomInt } from '../helpers/getRandomInt';
-import { PokemonCard } from '../components/PokemonCard/PokemonCard';
+import { PokemonFrontCard } from '../components/PokemonCard/FrontCard/PokemonFrontCard';
 import { Pokemon } from '../types/entity/pokemon';
+import { PokemonBackCard } from '../components/PokemonCard/BackCard/PokemonBackCard';
 
 interface Props {
     showRandomPokemon?: boolean;
@@ -19,7 +20,7 @@ export const PokemonDetailsPage: React.FC<Props> = ({ showRandomPokemon }) => {
   const [data, isLoaded] = usePokemonDetails(pokemonId, [pokemonId]);
   return (
     <div className={styles.PokemonDetailsPage}>
-      {isLoaded && <PokemonCard pokemon={data as Pokemon} />}
+      {isLoaded && <PokemonBackCard pokemon={data as Pokemon} />}
     </div>
   );
 };
